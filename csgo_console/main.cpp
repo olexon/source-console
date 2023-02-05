@@ -10,7 +10,7 @@ string command_input;
 
 vector<DWORD> pids = {};
 vector<HWND> wnd_handles = {};
-vector<HWND> wnd_classess = {};
+vector<HWND> wnd_classes = {};
 vector<string> wnd_class_names = {};
 
 void GetAllProcessess( DWORD processID )
@@ -119,7 +119,7 @@ void GetWindowInfo()
 
         HWND window_class_handle = FindWindow(wnd_class_names[i].c_str(), cName);
 
-        wnd_classess.push_back(window_class_handle);
+        wnd_classes.push_back(window_class_handle);
 
         CloseHandle(wnd_handles[i]);
     }
@@ -154,7 +154,7 @@ int main() {
         }
         else if(!stricmp(command_input.c_str(), "--print-handles"))
         {
-            for(auto i = begin(wnd_handles); i != end(wnd_handles); i++)
+            for(auto i = begin(wnd_classes); i != end(wnd_classes); i++)
             {
                 cout << hex << "0x" << *i << dec << endl;
             }
@@ -179,7 +179,7 @@ int main() {
                 break;
             }
 
-            SendCommand(wnd_classess[i], command_input.c_str());
+            SendCommand(wnd_classes[i], command_input.c_str());
         }
     }
 
