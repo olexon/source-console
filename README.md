@@ -9,4 +9,4 @@ External console for source engine games
 ### configuration ###
 after first launch source-console will create a config file that you can specify custom EXEs in
 
-![Epic FAIL!](https://github.com/olexon/csgo-console/blob/main/resources/resource1.png?raw=true)
+![Epic FAIL!](https://github.com/olexon/source-console/blob/main/resources/screenshot1.png?raw=true)
